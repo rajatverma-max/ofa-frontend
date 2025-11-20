@@ -1,7 +1,11 @@
+import {HeroContent} from './heroSection';
+import {TabSection} from './tabSection';
+
 const BannerSection = () => {
   return (
     <>
-      <h1>Banner section</h1>
+      <HeroContent />
+      <TabSection />
     </>
   );
 };

@@ -8,7 +8,7 @@ type Props = {
 
 export default function PublicLayout({children}: Props) {
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900">
+    <div className="min-h-screen">
       <Header />
       <main className="p-4">{children}</main>
       <Footer />
