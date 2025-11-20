@@ -2,8 +2,8 @@
 
 import {ReactNode} from 'react';
 import {usePathname} from 'next/navigation';
-import Header from '@/components/header';
-import Footer from '@/components/footer';
+import Header from '../../components/header';
+import Footer from '../../components/footer';
 
 function AuthLayoutProvider({children}: {children: ReactNode}) {
   return (
