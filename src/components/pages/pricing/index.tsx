@@ -5,7 +5,7 @@ const Pricing = ({data}: {data: any}) => {
     <>
       {/* <h1>{data.bannerTitle}</h1>
       <p>{data.bannerDescription}</p> */}
-      <BannerSection />
+      <BannerSection bannerData={data} />
     </>
   );
 };
