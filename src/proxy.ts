@@ -22,9 +22,10 @@ export const config = {
   ],
 };
 
-export function middleware(
+export function proxy(
   request: NextRequest
 ): NextResponse | void | Promise<NextResponse | void> {
+  console.log('middleware working');
   const pathname = request.nextUrl.pathname;
   const localeMatch = pathname.match(/^\/([a-z]{2})(?:\/|$)/);
   const pathnameWithoutLocale = localeMatch
