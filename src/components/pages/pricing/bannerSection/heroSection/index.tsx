@@ -1,6 +1,6 @@
 import TabSection from '../tabSection';
 
-const HeroContent = () => {
+const HeroSection = () => {
   return (
     <div className="flex overflow-hidden relative flex-col items-center px-4 pt-16 w-full max-md:max-w-full">
       <div className="flex flex-col justify-center w-full max-w-[1200px] max-md:max-w-full">
@@ -57,4 +57,4 @@ const HeroContent = () => {
   );
 };
 
-export default HeroContent;
+export default HeroSection;

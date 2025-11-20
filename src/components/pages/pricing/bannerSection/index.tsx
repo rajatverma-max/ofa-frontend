@@ -1,10 +1,10 @@
-import {HeroContent} from './heroSection';
-import {TabSection} from './tabSection';
+import HeroSection from './heroSection';
+import TabSection from './tabSection';
 
 const BannerSection = () => {
   return (
     <>
-      <HeroContent />
+      <HeroSection />
       <TabSection />
     </>
   );
