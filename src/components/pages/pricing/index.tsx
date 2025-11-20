@@ -1,7 +1,8 @@
-const Pricing = () => {
+const Pricing = ({data}: {data: any}) => {
   return (
     <>
-      <h1>Pricing</h1>
+      <h1>{data.bannerTitle}</h1>
+      <p>{data.bannerDescription}</p>
     </>
   );
 };

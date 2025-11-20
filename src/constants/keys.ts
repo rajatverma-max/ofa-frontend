@@ -1,7 +1,7 @@
 export type ContentfulKeys = {
   SPACE_ID: string;
   ACCESS_TOKEN: string;
-  ENVIRONMENT_KEY: string;
+  //   ENVIRONMENT_KEY: string;
   PREVIEW_HOST?: string;
 };
 
@@ -16,7 +16,7 @@ function requiredEnv(key: string): string {
 export const contentfulKeys: ContentfulKeys = {
   SPACE_ID: requiredEnv('NEXT_PUBLIC_CONTENTFUL_SPACE_ID'),
   ACCESS_TOKEN: requiredEnv('NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN'),
-  ENVIRONMENT_KEY: requiredEnv('NEXT_PUBLIC_CONTENTFUL_ENVIRONMENT_KEY'),
+  //   ENVIRONMENT_KEY: requiredEnv('NEXT_PUBLIC_CONTENTFUL_ENVIRONMENT_KEY'),
   PREVIEW_HOST: process.env.NEXT_PUBLIC_CONTENTFUL_PREVIEW_HOST,
 };
 
