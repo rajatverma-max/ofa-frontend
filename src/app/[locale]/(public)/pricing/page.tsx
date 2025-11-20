@@ -1,5 +1,5 @@
 const PricingPage = () => {
-  return <>hi</>;
+  return <>Pricing Page</>;
 };
 
 export default PricingPage;
