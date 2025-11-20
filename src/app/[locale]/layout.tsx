@@ -5,7 +5,6 @@ import {getMessages, setRequestLocale} from 'next-intl/server';
 import type {ReactNode} from 'react';
 import type {AppLocale} from '@/i18n/locales';
 import {defaultLocale} from '@/i18n/locales';
-import Providers from './providers';
 
 import '@/theme/global.tailwind.css';
 
@@ -38,7 +37,7 @@ export default async function RootLayout({children, params}: Props) {
     <html lang={locale}>
       <body>
         <NextIntlClientProvider messages={messages}>
-          <Providers>{children}</Providers>
+          {children}
         </NextIntlClientProvider>
       </body>
     </html>
