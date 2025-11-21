@@ -1,12 +1,13 @@
-import BannerSection from './bannerSection';
+import BannerSection, {type BannerData} from './bannerSection';
 
-const Pricing = ({data}: {data: any}) => {
+type PricingProps = BannerData;
+
+const Pricing = (props: PricingProps) => {
   return (
     <>
-      {/* <h1>{data.bannerTitle}</h1>
-      <p>{data.bannerDescription}</p> */}
-      <BannerSection bannerData={data} />
+      <BannerSection bannerData={props} />
     </>
   );
 };
+
 export default Pricing;

@@ -21,5 +21,6 @@ export const contentfulKeys: ContentfulKeys = {
 };
 
 export const ContentTypes = {
-  pricing: 'pricingPage',
+  pricingHero: 'pricingPage',
+  pricingTab: 'pricingProduct',
 } as const;

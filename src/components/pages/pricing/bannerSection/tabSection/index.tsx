@@ -1,10 +1,11 @@
 interface TabSectionProps {
-  icon: string;
+  icon?: string; // <-- allow string | undefined
   title: string;
   description: string;
   isActive?: boolean;
   iconAlt?: string;
 }
+
 const TabSection = ({
   icon,
   title,
@@ -17,14 +18,17 @@ const TabSection = ({
   const activeClasses = isActive
     ? 'bg-zinc-100 rounded-[8px_0_0_0]'
     : 'rounded-none bg-gray-100 bg-opacity-10';
+
   return (
     <div className={`${baseClasses} ${activeClasses}`}>
       <div className="flex overflow-hidden flex-col justify-center items-center self-center w-9 h-9 bg-white min-h-9">
-        <img
-          src={icon}
-          className="object-contain flex-1 w-full aspect-[29.73/36.00] fill-pink-600"
-          alt={iconAlt}
-        />
+        {icon && (
+          <img
+            src={icon}
+            className="object-contain flex-1 w-full aspect-[29.73/36.00] fill-pink-600"
+            alt={iconAlt}
+          />
+        )}
       </div>
       <div className="flex flex-col items-start mt-3 w-full tracking-normal text-center">
         <h3

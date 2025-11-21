@@ -13,14 +13,28 @@ export const getContentfulClient = (preview = false): ContentfulClient => {
   return contentful.createClient(config);
 };
 
-export const getPricingData = async <
+export const getPricingHero = async <
   TEntry extends EntrySkeletonType = EntrySkeletonType
 >(): Promise<EntryCollection<TEntry>> => {
-  const client = getContentfulClient();
+  const client = getContentfulClient(false);
   try {
     return await client.getEntries({
-      content_type: ContentTypes.pricing,
+      content_type: ContentTypes.pricingHero,
     });
+  } catch (error) {
+    console.error('Failed to fetch Contentful data', error);
+    throw error;
+  }
+};
+export const getPricingTab = async () => {
+  const client = getContentfulClient(false);
+  try {
+    const contentfulData = await client.getEntries({
+      content_type: ContentTypes.pricingTab,
+      include: 10,
+    });
+    console.log('constent', contentfulData);
+    return contentfulData;
   } catch (error) {
     console.error('Failed to fetch Contentful data', error);
     throw error;

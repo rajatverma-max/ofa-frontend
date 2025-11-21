@@ -1,33 +1,26 @@
-// app/pricing/page.tsx
 import Pricing from '@/components/pages/pricing';
-import {getPricingData} from '@/services/pricing/pricing.api';
+import {getPricingHero, getPricingTab} from '@/services/pricing/pricing.api';
+import type {
+  HeroItemFields,
+  TabItem,
+} from '@/components/pages/pricing/bannerSection';
 
 export const revalidate = 60;
 
-type PricingFields = {
-  bannerTitle?: string;
-  bannerDescription?: string;
-};
-
 export default async function PricingPage() {
   try {
-    const contentfulData = await getPricingData();
-    const item = contentfulData?.items?.[0]?.fields as
-      | PricingFields
+    const pricingHeroData = await getPricingHero();
+    const pricingTabData = await getPricingTab();
+
+    const heroItem = pricingHeroData?.items?.[0]?.fields as
+      | HeroItemFields
       | undefined;
 
-    if (!item) {
-      return (
-        <main>
-          <h1>Pricing</h1>
-          <p>Content not found.</p>
-        </main>
-      );
-    }
+    const tabItem = pricingTabData?.items as unknown as TabItem[] | undefined;
 
     return (
       <main>
-        <Pricing data={item} />
+        <Pricing heroItem={heroItem} tabItem={tabItem} />
       </main>
     );
   } catch (err) {
