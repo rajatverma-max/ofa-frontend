@@ -20,14 +20,8 @@ export interface BannerData {
 }
 
 const BannerSection = ({bannerData}: {bannerData: BannerData}) => {
-  const heroTitle =
-    bannerData.heroItem?.bannerTitle ?? 'Simple Pricing. Powerful Results.';
-  const heroDescription =
-    bannerData.heroItem?.bannerDescription ??
-    `A straightforward and cost-effective way to put your business before the UK’s largest
-    network of construction buyers – and give them all the information they need to select you
-    for their next project.`;
-
+  const heroTitle = bannerData.heroItem?.bannerTitle;
+  const heroDescription = bannerData.heroItem?.bannerDescription;
   const tabItems = bannerData.tabItem ?? [];
 
   return (
