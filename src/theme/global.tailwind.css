@@ -1,26 +1,52 @@
 @import 'tailwindcss';
 
+/* ---------- Design tokens (CSS variables) ---------- */
+
 :root {
+  /* Base theme */
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Layout */
+  --header-height: 96px; /* Figma: height 96 */
+
+  /* Brand colors */
+  --brand-primary: #280071; /* header background */
+  --brand-border: #eff0f129; /* subtle header bottom border */
+  --brand-accent: #ff2c8b; /* pink CTA */
+  --brand-accent-soft: #ff9ac5; /* lighter pink for focus ring */
 }
 
+/* Tailwind v4 theme bridge: exposes tokens as utilities */
+
 @theme inline {
+  /* existing tokens */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* brand color utilities -> bg-brand-primary, border-brand-border, etc. */
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-border: var(--brand-border);
+  --color-brand-accent: var(--brand-accent);
+  --color-brand-accent-soft: var(--brand-accent-soft);
 }
 
-@media (prefers-color-scheme: dark) {
+/* Dark mode */
+
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
+
+/* Base styles */
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }

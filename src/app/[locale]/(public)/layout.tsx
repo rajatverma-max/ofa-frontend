@@ -10,7 +10,7 @@ export default function PublicLayout({children}: Props) {
   return (
     <div className="min-h-screen">
       <Header />
-      <main className="p-4">{children}</main>
+      <main>{children}</main>
       <Footer />
     </div>
   );
