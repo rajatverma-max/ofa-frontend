@@ -3,27 +3,21 @@ import {getContentfulImgData} from '@/utils/getContentfulImage';
 import HeroSection from './heroSection';
 import TabSection from './tabSection';
 
-// Hero item fields coming from Contentful
 export interface HeroItemFields {
   bannerTitle?: string;
   bannerDescription?: string;
 }
-
-// Tab items
 export interface TabItemFields {
   name: string;
   description: string;
-  icon: any; // you can tighten this later to a Contentful asset type
+  icon: any;
 }
-
 export interface TabItem {
   fields: TabItemFields;
   sys?: {
     id: string;
   };
 }
-
-// This is what BannerSection expects
 export interface BannerData {
   heroItem?: HeroItemFields;
   tabItem?: TabItem[];
